@@ -2,6 +2,8 @@ import React from "react";
 import Post from "../../components/Post/Post";
 import { useQuery, gql } from "@apollo/client";
 
+ // define what info you wanna get
+// this query will make accessible: [posts and posts.user] values 
 const GET_POSTS = gql`
   query {
     posts {
@@ -16,6 +18,7 @@ const GET_POSTS = gql`
   }
 `;
 
+// getting the values using useQuery 
 export default function Posts() {
   const { error, loading, data } = useQuery(GET_POSTS);
 
